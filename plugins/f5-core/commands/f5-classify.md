@@ -237,7 +237,7 @@ Phân loại input files (Excel, documents) theo type, detect gaps, và tạo Co
 
 ```yaml
 classification:
-  file: "外部設計書_物件マスタ画面.xlsx"
+  file: "外部設計書_ユーザー管理画面.xlsx"
   type: DD
   confidence: HIGH
   method: content-based
@@ -364,16 +364,16 @@ CLASSIFIED FILES:
 
 | # | File | Type | Confidence | Method | Evidence |
 |---|------|------|------------|--------|----------|
-| 1 | 外部設計書_物件マスタ画面.xlsx | DD | HIGH | content | UI details, API specs |
+| 1 | 外部設計書_ユーザー管理画面.xlsx | DD | HIGH | content | UI details, API specs |
 | 2 | 詳細設計書_共通処理.xlsx | DD | HIGH | content | Processing logic |
-| 3 | 詳細設計書_物件マスタ.xlsx | DD | HIGH | content | Event handlers |
-| 4 | DBテーブル設計書_データ自動取得.xlsx | DB | HIGH | content | Table definitions |
-| 5 | APIインターフェース設計書_データ自動取得.xlsx | API | HIGH | content | Endpoint specs |
+| 3 | 詳細設計書_ユーザー管理.xlsx | DD | HIGH | content | Event handlers |
+| 4 | DBテーブル設計書_マスタ管理.xlsx | DB | HIGH | content | Table definitions |
+| 5 | APIインターフェース設計書_共通API.xlsx | API | HIGH | content | Endpoint specs |
 
 CONTENT ANALYSIS NOTES:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📄 外部設計書_物件マスタ画面.xlsx
+📄 外部設計書_ユーザー管理画面.xlsx
    Filename suggests: BD (外部設計書)
    Content analysis: DD (Detail Design)
    → Classified as: DD (based on content)
@@ -423,13 +423,13 @@ metadata:
   version: "3.0"
   classification_method: "content-first"
   source_path: ".f5/input/raw/excel/"
-  workflow_template: "f026-app"
+  workflow_template: "enterprise-app"
 
 # ============================================================================
 # 2. ANALYZED SOURCES (V3.0 - với method và evidence)
 # ============================================================================
 analyzed_sources:
-  - file: "外部設計書_物件マスタ画面.xlsx"
+  - file: "外部設計書_ユーザー管理画面.xlsx"
     type: excel
     classification: DD
     confidence: HIGH
@@ -469,7 +469,7 @@ classification_summary:
 confidence:
   overall: HIGH
   by_file:
-    - file: "外部設計書_物件マスタ画面.xlsx"
+    - file: "外部設計書_ユーザー管理画面.xlsx"
       level: HIGH
       method: content-based
       reason: "Multiple DD indicators found in content"
@@ -508,7 +508,7 @@ content_analysis:
       - "Request/Response schemas"
   
   conflicts_resolved:
-    - file: "外部設計書_物件マスタ画面.xlsx"
+    - file: "外部設計書_ユーザー管理画面.xlsx"
       name_suggests: BD
       content_indicates: DD
       resolution: "Content-based (DD)"
@@ -567,7 +567,7 @@ content_analysis:
 /f5-classify .f5/input/raw/excel/
 
 # Output:
-# 外部設計書_物件マスタ画面.xlsx → DD (HIGH confidence, content-based)
+# 外部設計書_ユーザー管理画面.xlsx → DD (HIGH confidence, content-based)
 # Evidence: UI controls, API specs, step-by-step logic
 ```
 
@@ -578,7 +578,7 @@ content_analysis:
 /f5-classify .f5/input/raw/excel/
 
 # Output:
-# 外部設計書_物件マスタ画面.xlsx → BD (LOW confidence, name-based)
+# 外部設計書_ユーザー管理画面.xlsx → BD (LOW confidence, name-based)
 # ⚠️ WARNING: Classification based on filename only - VERIFY MANUALLY
 ```
 
@@ -586,7 +586,7 @@ content_analysis:
 
 ```bash
 # Content analysis shows DD, but filename says 外部設計書 (BD)
-/f5-classify .f5/input/raw/excel/外部設計書_物件マスタ画面.xlsx
+/f5-classify .f5/input/raw/excel/外部設計書_ユーザー管理画面.xlsx
 
 # Output:
 # Type: DD (not BD)

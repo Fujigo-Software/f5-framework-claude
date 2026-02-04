@@ -30,7 +30,7 @@ your-project/
 
 ```bash
 # Clone F5 Framework
-git clone https://git.cloud9-solutions.com/f910/f5-framework-cli.git
+git clone https://github.com/Fujigo-Software/f5-framework-claude.git
 cd f5-framework
 
 # Install dependencies and build

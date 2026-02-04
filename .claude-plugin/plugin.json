@@ -4,7 +4,7 @@
   "description": "F5 Framework - AI-powered development framework with quality gates, TDD support, and enterprise-grade tooling for Claude Code",
   "author": {
     "name": "Fujigo Software Solutions",
-    "email": "dev@fujigo-soft.com"
+    "email": "opensource@fujigo.dev"
   },
   "repository": "https://github.com/fujigo/f5-framework",
   "license": "MIT",

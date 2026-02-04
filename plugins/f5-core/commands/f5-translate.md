@@ -57,7 +57,7 @@ Dịch tài liệu tiếng Nhật sang tiếng Việt với sự hỗ trợ củ
 │                                                                                  │
 │  2️⃣ DOMAIN TERMS (EN common) → ⚠️ FLAG CHO BRSE                                │
 │     • mode, status, flag, master, batch                                         │
-│     • 交通管制モード, 処理区分, 運用種別                                         │
+│     • システム管理モード, 処理区分, 運用種別                                         │
 │     → Action: Gợi ý options, BRSE quyết định                                    │
 │                                                                                  │
 │  3️⃣ BUSINESS CONTENT → ✅ DỊCH + FLAG NẾU AMBIGUOUS                            │
@@ -93,17 +93,17 @@ translation_rules:
 ⚠️ UNCERTAIN TERM DETECTED
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Japanese: 交通管制モード
+Japanese: システム管理モード
 
 Contexts found:
-  1. 「交通管制モードに切り替える」 (Sheet: 画面項目, Cell: B15)
-  2. 「交通管制モード中は編集不可」 (Sheet: 処理フロー, Cell: C8)
+  1. 「システム管理モードに切り替える」 (Sheet: 画面項目, Cell: B15)
+  2. 「システム管理モード中は編集不可」 (Sheet: 処理フロー, Cell: C8)
 
 Possible translations:
   1. Chế độ điều khiển giao thông
   2. Chế độ quản lý giao thông  
   3. Chế độ kiểm soát giao thông
-  4. [Keep as-is: 交通管制モード]
+  4. [Keep as-is: システム管理モード]
 
 Recommendation:
   → Verify with customer or domain expert
@@ -188,11 +188,11 @@ Location: Sheet: テーブル定義, Column: フィールド名
 ```yaml
 # .f5/config/glossary.yaml
 glossary:
-  # Traffic Control Domain (F026-specific)
-  交通管制: "Quản lý giao thông"
-  物件マスタ: "Master vật phẩm"
+  # Domain-specific Terms
+  システム管理: "Quản lý hệ thống"
+  ユーザー管理: "Quản lý người dùng"
   CSV取込: "Import CSV"
-  データ自動取得: "Tự động lấy dữ liệu"
+  データ取得処理: "Tự động lấy dữ liệu"
   
   # Technical Terms
   画面設計書: "Tài liệu thiết kế màn hình"
@@ -336,7 +336,7 @@ expected_content_types:
 ├── raw/                               # Files gốc từ customer (JP)
 │   └── excel/
 │       └── 0203/
-│           ├── 外部設計書_物件マスタ画面.xlsx
+│           ├── 外部設計書_サンプル画面.xlsx
 │           └── 詳細設計書_xxx.xlsx
 │
 ├── translated/                        # 🆕 Files đã dịch (VI)
@@ -346,8 +346,8 @@ expected_content_types:
 │   │
 │   └── excel/
 │       └── 0203/
-│           ├── 外部設計書_物件マスタ画面.vi.xlsx    # Bản dịch
-│           ├── 外部設計書_物件マスタ画面.vi.md      # Export markdown
+│           ├── 外部設計書_サンプル画面.vi.xlsx    # Bản dịch
+│           ├── 外部設計書_サンプル画面.vi.md      # Export markdown
 │           └── _translation-notes.md               # Ghi chú dịch
 │
 └── classified/                        # Output của f5-classify
@@ -362,7 +362,7 @@ expected_content_types:
 
 ```bash
 # Translate single file
-/f5-translate .f5/input/raw/excel/0203/外部設計書_物件マスタ画面.xlsx
+/f5-translate .f5/input/raw/excel/0203/外部設計書_サンプル画面.xlsx
 
 # Translate entire folder
 /f5-translate .f5/input/raw/excel/0203/
@@ -381,7 +381,7 @@ expected_content_types:
 /f5-translate review
 
 # Review specific file
-/f5-translate review 外部設計書_物件マスタ画面.xlsx
+/f5-translate review 外部設計書_サンプル画面.xlsx
 
 # Approve translation (by BRSE)
 /f5-translate approve
@@ -397,7 +397,7 @@ expected_content_types:
 /f5-translate glossary
 
 # Add new term
-/f5-translate glossary add "交通管制" "Quản lý giao thông"
+/f5-translate glossary add "システム管理" "Quản lý giao thông"
 
 # Import glossary from file
 /f5-translate glossary import ./custom-glossary.yaml
@@ -488,7 +488,7 @@ expected_content_types:
 
 | # | File gốc | File dịch | Coverage | Status |
 |---|----------|-----------|----------|--------|
-| 1 | 外部設計書_物件マスタ画面.xlsx | *.vi.xlsx | 95% | ✅ Complete |
+| 1 | 外部設計書_サンプル画面.xlsx | *.vi.xlsx | 95% | ✅ Complete |
 | 2 | 詳細設計書_共通処理.xlsx | *.vi.xlsx | 88% | ⚠️ Pending review |
 
 ## Items cần review
@@ -509,7 +509,7 @@ expected_content_types:
 
 | Japanese | Vietnamese | Source | Added by |
 |----------|------------|--------|----------|
-| 交通管制モード | Chế độ quản lý giao thông | 外部設計書_xxx.xlsx | AI suggest |
+| システム管理モード | Chế độ quản lý giao thông | 外部設計書_xxx.xlsx | AI suggest |
 ```
 
 ### Translation Coverage YAML
@@ -523,8 +523,8 @@ metadata:
   version: "1.1"  # With completeness check
 
 files:
-  - source: "外部設計書_物件マスタ画面.xlsx"
-    target: "外部設計書_物件マスタ画面.vi.xlsx"
+  - source: "外部設計書_サンプル画面.xlsx"
+    target: "外部設計書_サンプル画面.vi.xlsx"
     coverage: 95%
     confidence:
       high: 75%
@@ -539,7 +539,7 @@ files:
     status: in_progress
 
 glossary_additions:
-  - term: "交通管制モード"
+  - term: "システム管理モード"
     translation: "Chế độ quản lý giao thông"
     confidence: medium
     verified: false
@@ -606,11 +606,11 @@ translation_completeness:
 uncertain_terms:
   count: 3
   items:
-    - term: "交通管制モード"
+    - term: "システム管理モード"
       contexts:
-        - text: "交通管制モードに切り替える"
+        - text: "システム管理モードに切り替える"
           location: "Sheet: 画面項目, Cell: B15"
-        - text: "交通管制モード中は編集不可"
+        - text: "システム管理モード中は編集不可"
           location: "Sheet: 処理フロー, Cell: C8"
       suggestions:
         - "Chế độ điều khiển giao thông"

@@ -15,7 +15,7 @@ Welcome to F5 Framework! This guide will help you get up and running in 5 minute
 
 ```bash
 # Clone repository
-git clone https://git.cloud9-solutions.com/f910/f5-framework-cli.git
+git clone https://github.com/Fujigo-Software/f5-framework-claude.git
 cd f5-framework
 
 # Install dependencies

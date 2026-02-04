@@ -75,3 +75,6 @@ mcp/
 .f5/security/backup/
 .env.local
 *.local
+
+.serena
+.serena/**

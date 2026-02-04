@@ -64,12 +64,12 @@ properties:
       workflow_template:
         type: string
         description: "Workflow template đang sử dụng"
-        example: "f026-app"
+        example: "enterprise-app"
       
       expected_sections_file:
         type: string
         description: "File expected-sections.yaml đã dùng"
-        example: "workflows/f026-app/expected-sections.yaml"
+        example: "workflows/enterprise-app/expected-sections.yaml"
 
   # ==========================================================================
   # 2. ANALYZED SOURCES
@@ -715,7 +715,7 @@ examples:
       generated_by: "f5-classify"
       version: 1
       source_path: ".f5/input/raw/excel/0203/"
-      workflow_template: "f026-app"
+      workflow_template: "enterprise-app"
     
     statistics:
       total_files_analyzed: 8

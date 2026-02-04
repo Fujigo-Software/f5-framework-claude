@@ -18,7 +18,7 @@ Arguments received: `$ARGUMENTS`
 **Step 1: Extract COMMAND and WORKFLOW_NAME from arguments**
 
 ```
-If arguments = "load f026-app"  → COMMAND="load", WORKFLOW_NAME="f026-app"
+If arguments = "load enterprise-app"  → COMMAND="load", WORKFLOW_NAME="enterprise-app"
 If arguments = "load greenfield"  → COMMAND="load", WORKFLOW_NAME="greenfield"
 If arguments = "load mvp"         → COMMAND="load", WORKFLOW_NAME="mvp"
 If arguments = "load"             → COMMAND="load", WORKFLOW_NAME=null
@@ -43,7 +43,7 @@ If arguments = "list"             → COMMAND="list"
 
 # [DIRECT-LOAD]
 
-**You are here because user provided a workflow name, e.g., `/f5-workflow load f026-app`**
+**You are here because user provided a workflow name, e.g., `/f5-workflow load enterprise-app`**
 
 **CRITICAL RULES:**
 - ❌ Do NOT analyze project
@@ -56,7 +56,7 @@ If arguments = "list"             → COMMAND="list"
 Look for workflow template in F5 Framework CLI:
 
 ```
-Path: D:\AI_WORKSPACE\projects\f5-framework-cli\workflows\{WORKFLOW_NAME}\
+Path: {PROJECT_FOLDER}\workflows\{WORKFLOW_NAME}\
 
 Required files:
 - WORKFLOW.md
@@ -67,7 +67,7 @@ Required files:
 - templates/ folder (optional)
 ```
 
-If workflow NOT found, show error and list available workflows from `D:\AI_WORKSPACE\projects\f5-framework-cli\workflows\` folder.
+If workflow NOT found, show error and list available workflows from `{PROJECT_FOLDER}\workflows\` folder.
 
 ## Step 2: Create Folder Structure
 
@@ -474,4 +474,4 @@ Advance to next phase with gate validation
 
 # [LIST]
 
-List all available workflows from `D:\AI_WORKSPACE\projects\f5-framework-cli\workflows\` folder
+List all available workflows from `{PROJECT_FOLDER}\workflows\` folder
